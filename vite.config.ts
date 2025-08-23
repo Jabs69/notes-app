@@ -9,10 +9,4 @@ export default defineConfig({
 		environment:'happy-dom'
 
 	},
-	server:{
-
-		open:true
-
-	}
-
 });
