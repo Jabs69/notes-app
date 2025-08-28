@@ -1,40 +1,39 @@
-import useModals from '../context/ModalContext';
-import useNotes from '../context/NotesContext';
-import styles from '../styles/ModalOf.module.css';
+import styles from '../styles/Modal.module.css';
+import useConf from '../context/ConfContext';
+import { type noteColor } from '../types/config';
+import { listActions } from '../actions/confActions';
 
-const ModalOfColor = ({note}) => {
+type Props = {
+	noteId?: string
+}
 
-	const arrayColors = ['bg-blue','bg-red','bg-violet','bg-green','bg-pink','bg-default'],
+const ModalOfColor = ({ noteId }: Props) => {
 
-	{setColorModal} = useModals(),
+	const arrayColors = ['bg-blue', 'bg-red', 'bg-violet', 'bg-green', 'bg-pink', 'bg-default'],
 
-	{setNotes} = useNotes(),
+		{ dispatch } = useConf(),
 
-	changeColor = (e) => {
+		changeColor = (e: React.MouseEvent<HTMLDivElement>) => {
 
-		note.bgColor = e.target.classList[0];
+			const target = e.target as HTMLDivElement;
 
-		setNotes(prevNotes => prevNotes.map(n => (n.id !== note.id) ? n : note));
+			dispatch({ type: listActions.changeNoteColor, payload: target.dataset.color as noteColor })
 
-		sessionStorage.setItem('data',JSON.stringify(note));
-
-		setColorModal(false);
-
-	}
+		}
 
 	return (
 
 		<div className={styles.modal}>
-			
-			<i className={`bi-x text-white ${styles.cross}`} onClick={() => setColorModal(false)}></i>
+
+			<i className={`bi-x text-white ${styles.cross}`} onClick={() => false}></i>
 
 			<section className={styles.colorModal}>
-				
-				{arrayColors.map((color,i) => <div className={`${color} ${styles.colorModalChild}`} key={i} onClick={changeColor}></div>)}
+
+				{arrayColors.map((color) => <div data-color={color} className={`${color} ${styles.colorModalChild}`} key={color} onClick={changeColor}></div>)}
 
 			</section>
 
-		</div>	
+		</div>
 
 	)
 

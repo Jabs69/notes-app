@@ -1,10 +1,8 @@
 import {useParams} from 'react-router-dom';
-import useModals from '../context/ModalContext';
-import Note from './Note';
-import CheckList from './CheckList';
+import Note from '../shared/elements/Note';
+import CheckList from '../features/checklists/CheckList';
 import ModalOfView from './ModalOfView';
 import SearchForm from './SearchForm';
-import Header from './Header';
 import useConf from '../context/ConfContext';
 import useNotes from '../context/NotesContext';
 import Void from './Void';
@@ -70,8 +68,6 @@ const SearchResults = () => {
 	return (
 
 		<>
-
-			<Header/>
 
 			{
 

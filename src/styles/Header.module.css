@@ -10,8 +10,7 @@
   align-items: center;
   justify-content: space-between;
   height: 7vh;
-  padding-bottom: var(--space-s);
-  padding-top: var(--space-xs);
+  padding: var(--space-3xs) var(--space-2xs);
   border-bottom: thin solid gray;
   background-image: linear-gradient(#eee,#bbb);
 
@@ -22,8 +21,6 @@
   background-color: #000;
 
 }
-
-.headerIcons {margin-right: var(--space-3xs);} 
 
 .titleApp {
 
@@ -36,5 +33,6 @@
 
   display: flex;
   align-items: center;
+  gap: .5rem;
 
 }

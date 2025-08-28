@@ -1,7 +1,6 @@
 import useNotes from '../context/NotesContext';
-import useModals from '../context/ModalContext';
 import useConf from '../context/ConfContext';
-import styles from '../styles/ModalOf.module.css';
+import styles from '../styles/Modal.module.css';
 
 const ModalOfOrder = () => {
 

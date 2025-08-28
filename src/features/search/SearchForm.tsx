@@ -1,6 +1,5 @@
 import {useRef} from 'react';
 import {useNavigate} from 'react-router-dom';
-import useModals from '../context/ModalContext';
 import styles from '../styles/SearchForm.module.css';
 
 const SearchForm = () => {

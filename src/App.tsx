@@ -1,6 +1,6 @@
 import AppNotes from './components/AppNotes';
-import {NotesProvider} from './context/NotesContext';
-import {ConfProvider} from './context/ConfContext';
+import { NotesProvider } from './context/NotesContext';
+import { ConfProvider } from './context/ConfContext';
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
 
       <NotesProvider>
 
-        <AppNotes/>
-      
+        <AppNotes />
+
       </NotesProvider>
 
     </ConfProvider>

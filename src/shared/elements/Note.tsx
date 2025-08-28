@@ -1,27 +1,27 @@
-import {useNavigate} from 'react-router-dom';
-import useConf from '../context/ConfContext';
+import { useNavigate } from 'react-router-dom';
+import useConf from '../../context/ConfContext';
 import styles from '../styles/Notes.module.css';
 
-const Note = ({note}) => {
+const Note = ({ note }) => {
 
-	let {title,asunto,date,id} = note;
+	let { title, asunto, date, id } = note;
 
-	const {conf} = useConf(),
+	const { conf } = useConf(),
 
-	nav = useNavigate(),
+		nav = useNavigate(),
 
-	to = (e) => {
+		to = (e) => {
 
-		sessionStorage.setItem('data',JSON.stringify(note))
+			sessionStorage.setItem('data', JSON.stringify(note))
 
-		nav(`/note/${id}`)
+			nav(`/note/${id}`)
 
-	}
+		}
 
 	return (
 
 		<article className={`${styles.notes} ${conf.theme}-note ${note.bgColor || conf.bgColor} ${conf.view}`} onClick={to}>
-				
+
 			<section className={styles.notesSection}>
 
 				<h3 className={styles.notesTitle}>{title}</h3>
@@ -32,7 +32,7 @@ const Note = ({note}) => {
 
 			<footer className={`${styles.footerNote}`}>
 
-				<span>{date.slice(0,date.indexOf(','))}</span>
+				<span>{date.slice(0, date.indexOf(','))}</span>
 
 			</footer>
 

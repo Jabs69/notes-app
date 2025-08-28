@@ -1,13 +1,11 @@
 import useNotes from '../context/NotesContext';
-import useModals from '../context/ModalContext';
 import Void from './Void';
-import Note from './Note.jsx';
+import Note from '../shared/elements/Note.js';
 import CheckList from './CheckList';
 import ModalOfView from './ModalOfView';
 import ModalOfOrder from './ModalOfOrder';
 import SearchForm from './SearchForm';
 import useConf from '../context/ConfContext';
-import Header from './Header';
 
 const Trash = ({view,setView}) => {
 
@@ -28,8 +26,6 @@ const Trash = ({view,setView}) => {
 	return(
 
 		<>
-
-			<Header/>
 
 			<div className="grid-notes" style={GridSize}>
 			

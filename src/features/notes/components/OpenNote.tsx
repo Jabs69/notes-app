@@ -1,7 +1,6 @@
 import {useRef} from 'react';
 import {useParams,useNavigate} from 'react-router-dom';
 import useNotes from '../context/NotesContext';
-import useModals from  '../context/ModalContext';
 import useConf from '../context/ConfContext';
 import ModalOfColor from './ModalOfColor';
 import styles from '../styles/Notes.module.css';

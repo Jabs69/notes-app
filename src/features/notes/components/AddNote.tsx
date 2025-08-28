@@ -1,6 +1,5 @@
 import {useRef} from 'react';
 import useNotes from '../context/NotesContext';
-import useModals from  '../context/ModalContext';
 import useConf from '../context/ConfContext';
 import styles from '../styles/Add.module.css';
 

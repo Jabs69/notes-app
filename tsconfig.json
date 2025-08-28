@@ -7,6 +7,12 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
+    baseUrl:"./",
+    paths:{
+
+      "@/*":["./src/*"]
+
+    }
     "module": "es2022",
     "target": "esnext",
     "moduleResolution": "bundler",
@@ -41,5 +47,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "include": ["src", "custom.d.ts"]
 }
